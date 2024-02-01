@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>counter app</title>
+  </head>
+  <body>
+    <div class="center">
+      <button id="increment" onclick="increment">Increment</button>
+      <span id="display">00</span>
+      <button id="decrement" onclick="decrement">Decrement</button>
+      <button id="reset">reset value</button>
+    </div>
+  </body>
+  <script>
+    const value = document.getElementById("display");
+    const incrementBtn = document.getElementById("increment");
+    const decrementBtn = document.getElementById("decrement");
+    const resetBtn = document.getElementById("reset");
+
+    decrementBtn.addEventListener("click", () => {
+      const value = Number(display.innerText);
+      if (value > 0) {
+        display.innerText = value - 1;
+      } else {
+        alert("Negative value not allowed");
+      }
+    });
+    resetBtn.addEventListener("click", () => {
+      display.innerText = 0;
+    });
+    incrementBtn.addEventListener("click", () => {
+      const value = Number(display.innerText);
+      if (value >= 10) {
+        alert("10+ values are not allowed");
+      } else {
+        display.innerText = value + 1;
+      }
+    });
+  </script>
+</html>
