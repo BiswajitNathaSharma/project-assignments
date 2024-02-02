@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>password validator</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        top: 40%;
+        left: 30%;
+        width: 700px;
+      }
+      h1 {
+        font-size: 45px;
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+      }
+
+      input {
+        height: 40px;
+        text-align: center;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>validate password</h1>
+      <div class="form">
+        <input type="number" name="" id="input1" placeholder="enter number 1" />
+        <input
+          type="number"
+          name=""
+          id="input2"
+          placeholder="enter number 2 "
+        />
+        <input
+          type="text"
+          name=""
+          id="operator"
+          placeholder="enter operator "
+        />
+        <input type="button" value="verify" onclick="handleSubmit()" />
+      </div>
+    </div>
+  </body>
+  <script>
+    const input1 = document.getElementById("input1");
+    const input2 = document.getElementById("input2");
+    const operator = document.getElementById("operator");
+
+    function handleSubmit() {
+      let operatorValue = operator.value;
+      let operand1 = Number(input1.value);
+      let operand2 = Number(input2.value);
+      switch (operatorValue) {
+        case "+":
+          console.log(operand1 + operand2);
+          break;
+        case "*":
+          console.log(operand1 * operand2);
+          break;
+        case "/":
+          console.log(operand1 / operand2);
+          break;
+        case "-":
+          console.log(operand1 - operand2);
+          break;
+
+        default:
+          console.log("enter a valid operator");
+          break;
+      }
+    }
+  </script>
+</html>
