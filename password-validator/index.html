@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password validator</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            top: 40%;
+            left: 30%;
+            width: 700px ;
+        }
+        h1{
+            font-size: 45px;
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+
+        input{
+            height: 40px;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>validate password</h1>
+        <div class="form">
+        <input type="text" name="" id="input1" placeholder="enter password">
+        <input type="text" name="" id="input2" placeholder="reenter password">
+        <input type="button" value="verify" onclick="handleVerify()">
+    </div>
+    </div>
+</body>
+<script>
+    const input1 = document.getElementById("input1")
+    const input2 = document.getElementById("input2")
+
+    function handleVerify(){
+        if (input1.value.length == 0 || input2.value.length == 0) {
+            console.log("enter a valid input")
+        }
+        else if (input1.value === input2.value) {
+            console.log("password matched. password verification successful")
+        }
+        else console.log("password mismatched. password verification unsuccessful")
+    }
+</script>
+</html>
