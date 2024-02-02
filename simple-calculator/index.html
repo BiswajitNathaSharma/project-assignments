@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>password validator</title>
+    <title>Simple calculator </title>
     <style>
       .container {
         display: flex;
@@ -28,11 +28,14 @@
         text-align: center;
         font-size: 30px;
       }
+      span{
+        font-size: 30px;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>validate password</h1>
+      <h1> Simple calculator</h1>
       <div class="form">
         <input type="number" name="" id="input1" placeholder="enter number 1" />
         <input
@@ -48,6 +51,7 @@
           placeholder="enter operator "
         />
         <input type="button" value="verify" onclick="handleSubmit()" />
+        <span id="output"></span>
       </div>
     </div>
   </body>
@@ -55,26 +59,37 @@
     const input1 = document.getElementById("input1");
     const input2 = document.getElementById("input2");
     const operator = document.getElementById("operator");
+    const output = document.getElementById("output")
 
     function handleSubmit() {
       let operatorValue = operator.value;
       let operand1 = Number(input1.value);
       let operand2 = Number(input2.value);
+
+      if (!operatorValue || !operand1 || !operand2) {
+        output.innerHTML = "No field should be empty"
+      }
+      else
       switch (operatorValue) {
         case "+":
           console.log(operand1 + operand2);
+          output.innerHTML = `Addition of ${operand1} and ${operand2} is ${operand1+operand2}`
           break;
         case "*":
           console.log(operand1 * operand2);
+          output.innerHTML = `Multiplication of ${operand1} and ${operand2} is ${operand1*operand2}`
           break;
         case "/":
           console.log(operand1 / operand2);
+          output.innerHTML = `Division of ${operand1} and ${operand2} is ${operand1/operand2}`
           break;
         case "-":
           console.log(operand1 - operand2);
+          output.innerHTML = `Substraction of ${operand1} and ${operand2} is ${operand1-operand2}`
           break;
 
         default:
+        output.innerHTML = `${operatorValue} is not a valid operator use only + , - , * , / `
           console.log("enter a valid operator");
           break;
       }
